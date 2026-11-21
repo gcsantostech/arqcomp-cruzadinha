@@ -1,4 +1,4 @@
-# Cruzadinha Profundo Tux
+# <img src="assets/tux-logo.png" alt="Logo" width="30" align="absmiddle"> Cruzadinha Profundo Tux
 
 Jogo de palavras cruzadas sobre **Arquitetura Computacional**, feito com HTML, CSS e JavaScript puros. O aluno descobre os termos a partir de pistas e confere as respostas direto no tabuleiro.
 

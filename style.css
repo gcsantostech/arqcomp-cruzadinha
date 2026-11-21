@@ -1,0 +1,280 @@
+/* ---------- Cores e tamanhos ---------- */
+:root {
+  --fundo: #f2f4f8;
+  --texto: #1a2233;
+  --azul-escuro: #101a2e;
+  --destaque: #ffc933;
+  --borda: #2b3a55;
+  --certa: #cdeed8;
+  --certa-texto: #14532d;
+  --errada: #fad4d4;
+  --errada-texto: #7f1d1d;
+  --cel: clamp(22px, 5.4vw, 38px); /* tamanho de cada casa */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.4;
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  background: var(--azul-escuro);
+  color: #ffffff;
+  padding: 20px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--destaque);
+}
+
+.titulo {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.titulo img {
+  width: 70px;
+  height: 70px;
+}
+
+.topo p {
+  margin: 0;
+  color: #c9d3e6;
+}
+
+/* ---------- Layout principal ---------- */
+.conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---------- Barra de botões ---------- */
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.botao {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid var(--azul-escuro);
+  cursor: pointer;
+}
+
+.botao-principal {
+  background: var(--azul-escuro);
+  color: #ffffff;
+}
+
+.botao-secundario {
+  background: #ffffff;
+  color: var(--azul-escuro);
+}
+
+.botao:hover {
+  background: var(--destaque);
+  color: var(--azul-escuro);
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+.contador {
+  margin: 0 0 0 auto;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 2px solid var(--borda);
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.mensagem {
+  min-height: 1.4em;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Tabuleiro ---------- */
+.tabuleiro-wrap {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+#tabuleiro {
+  border-collapse: collapse;
+}
+
+#tabuleiro td {
+  width: var(--cel);
+  height: var(--cel);
+  padding: 0;
+  position: relative;
+}
+
+#tabuleiro td.letra {
+  background: #ffffff;
+  border: 1px solid var(--borda);
+}
+
+#tabuleiro td.letra.certa {
+  background: var(--certa);
+}
+
+#tabuleiro td.letra.errada {
+  background: var(--errada);
+}
+
+#tabuleiro td.letra:focus-within {
+  outline: 3px solid var(--destaque);
+  outline-offset: -3px;
+  z-index: 2;
+}
+
+#tabuleiro input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: calc(var(--cel) * 0.55);
+  color: var(--texto);
+}
+
+#tabuleiro input:focus {
+  outline: none;
+  background: #fff4c2;
+}
+
+#tabuleiro td.certa input {
+  color: var(--certa-texto);
+}
+
+#tabuleiro td.errada input {
+  color: var(--errada-texto);
+}
+
+.numero {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  color: #4b5a78;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ---------- Pistas ---------- */
+.area-pistas h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  border-bottom: 3px solid var(--destaque);
+  padding-bottom: 4px;
+}
+
+.lista-pistas {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+}
+
+.lista-pistas li {
+  margin-bottom: 4px;
+  border-radius: 6px;
+}
+
+.pista-btn {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: #ffffff;
+  border: 1px solid #d3d9e5;
+  border-radius: 6px;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.pista-btn:hover {
+  border-color: var(--azul-escuro);
+}
+
+.pista-btn:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 1px;
+}
+
+.pista-numero {
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.pista-status {
+  font-weight: 700;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+.lista-pistas li.certa .pista-btn {
+  background: var(--certa);
+  border-color: #6bbf8a;
+}
+
+.lista-pistas li.certa .pista-status {
+  color: var(--certa-texto);
+}
+
+.lista-pistas li.errada .pista-btn {
+  background: var(--errada);
+  border-color: #e08a8a;
+}
+
+.lista-pistas li.errada .pista-status {
+  color: var(--errada-texto);
+}
+
+/* ---------- Telas menores ---------- */
+@media (max-width: 1000px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .topo h1 {
+    font-size: 1.4rem;
+  }
+
+  .numero {
+    font-size: 8px;
+  }
+
+  .contador {
+    margin-left: 0;
+  }
+}

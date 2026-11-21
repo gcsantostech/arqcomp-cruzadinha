@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cruzadinha Profundo Tux</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/tux-logo.png" type="image/x-icon" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topo">
+      <div class="titulo">
+        <img src="assets/tux-logo.png" alt="" />
+        <h1>Cruzadinha do Profundo Tux</h1>
+      </div>
+      <p>
+        Sua missão é descobrir todas as palavras, para que tux tenha mais
+        chanches de sucesso.
+      </p>
+    </header>
+
+    <main class="conteudo">
+      <section class="area-jogo" aria-label="Tabuleiro">
+        <div class="barra">
+          <button type="button" id="btn-conferir" class="botao botao-principal">
+            Conferir
+          </button>
+          <button
+            type="button"
+            id="btn-reiniciar"
+            class="botao botao-secundario"
+          >
+            Reiniciar
+          </button>
+          <p id="contador" class="contador">0 de 16 palavras</p>
+        </div>
+
+        <p id="mensagem" class="mensagem" aria-live="polite">
+          Clique numa casa e digite. Use as setas para mover e Backspace para
+          voltar.
+        </p>
+
+        <div class="tabuleiro-wrap">
+          <table id="tabuleiro" aria-label="Tabuleiro da cruzadinha"></table>
+        </div>
+      </section>
+
+      <section class="area-pistas" aria-label="Pistas">
+        <h2>Horizontais</h2>
+        <ol id="pistas-horizontais" class="lista-pistas"></ol>
+
+        <h2>Verticais</h2>
+        <ol id="pistas-verticais" class="lista-pistas"></ol>
+      </section>
+    </main>
+  </body>
+</html>

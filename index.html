@@ -41,6 +41,15 @@
           voltar.
         </p>
 
+        <div class="preparo">
+          <p id="preparo-texto" class="preparo-texto">
+            Preparo do Tux para a prova: 0%
+          </p>
+          <div class="preparo-trilho">
+            <div id="preparo-barra" class="preparo-barra"></div>
+          </div>
+        </div>
+
         <div class="tabuleiro-wrap">
           <table id="tabuleiro" aria-label="Tabuleiro da cruzadinha"></table>
         </div>
@@ -54,5 +63,50 @@
         <ol id="pistas-verticais" class="lista-pistas"></ol>
       </section>
     </main>
+
+    <div id="vitoria" class="vitoria" hidden>
+      <div id="confete" class="confete" aria-hidden="true"></div>
+
+      <div
+        class="vitoria-cartao"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="vitoria-titulo"
+      >
+        <img src="assets/tux-logo.png" alt="" class="vitoria-logo" />
+        <p class="vitoria-selo">APROVADO!</p>
+        <h2 id="vitoria-titulo">O Profundo Tux mandou bem na prova!</h2>
+        <p class="vitoria-texto">
+          Graças a você, ele descobriu todas as palavras do tabuleiro e chegou
+          pronto para a prova de Arquitetura Computacional.
+        </p>
+
+        <dl class="boletim">
+          <dt>Disciplina</dt>
+          <dd>Arquitetura Computacional</dd>
+          <dt>Palavras descobertas</dt>
+          <dd id="vitoria-palavras">16 de 16</dd>
+          <dt>Conferências</dt>
+          <dd id="vitoria-tentativas">1 conferência</dd>
+          <dt>Tempo de estudo</dt>
+          <dd id="vitoria-tempo">0s</dd>
+          <dt class="boletim-nota">Nota do Tux</dt>
+          <dd id="vitoria-nota" class="boletim-nota">10,0</dd>
+        </dl>
+
+        <div class="vitoria-botoes">
+          <button
+            type="button"
+            id="btn-jogar-de-novo"
+            class="botao botao-principal"
+          >
+            Jogar de novo
+          </button>
+          <button type="button" id="btn-fechar" class="botao botao-secundario">
+            Ver tabuleiro
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
